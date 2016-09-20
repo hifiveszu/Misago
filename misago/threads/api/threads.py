@@ -24,10 +24,11 @@ from .threadendpoints.list import threads_list_endpoint
 from .threadendpoints.merge import thread_merge_endpoint, threads_merge_endpoint
 from .threadendpoints.patch import thread_patch_endpoint
 
-
+import message_tool
 
 def send_thead2kinto(id,username,title,content):
     print('sand2wechat',id,username,title,content)
+    message_tool.push_thread(id,username,title,content)
 
 class ViewSet(viewsets.ViewSet):
     thread = None
