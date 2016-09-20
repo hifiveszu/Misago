@@ -25,6 +25,10 @@ from .threadendpoints.merge import thread_merge_endpoint, threads_merge_endpoint
 from .threadendpoints.patch import thread_patch_endpoint
 
 
+
+def send_thead2kinto(id,username,title,content):
+    print('sand2wechat',id,username,title,content)
+
 class ViewSet(viewsets.ViewSet):
     thread = None
     TREE_ID = None
@@ -89,6 +93,17 @@ class ThreadViewSet(ViewSet):
 
         if posting.is_valid():
             posting.save()
+            #import ipdb
+            #print dir(thread)
+            #try send
+            #ipdb.set_trace()
+            #thread_id=thread.pk
+            thread_id = thread.pk
+            title = thread.title
+            username = thread.first_post.poster_name
+            content = thread.first_post.original
+
+            send_thead2kinto(thread_id,username,title,content)
 
             return Response({
                 'id': thread.pk,

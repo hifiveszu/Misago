@@ -5,9 +5,10 @@ from misago import __version__ as version
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
-requirements_path = os.path.join(os.path.dirname(__file__), 'misago/project_template/requirements.txt')
-with open(requirements_path, "r") as f:
-    REQUIREMENTS = [x.strip() for x in f.readlines()]
+#requirements_path = os.path.join(os.path.dirname(__file__), 'misago/project_template/requirements.txt')
+#with open(requirements_path, "r") as f:
+#    REQUIREMENTS = [x.strip() for x in f.readlines()]
+REQUIREMENTS = []
 
 
 # allow setup.py to be run from any path
