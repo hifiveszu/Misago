@@ -2,7 +2,7 @@
 # encoding: utf-8
 from kinto_http import Client # 也可以用requests手动实现
 credentials = ('wwj', 'wwj-test')
-server_url = 'http://paperweekly.just4fun.site:8888/v1/'
+server_url = 'http://kinto.just4fun.site/v1/'
 client = Client(server_url= server_url,auth=credentials)
 collection = 'forum2wechat_todo' #forum2wechat_todo  # forum2wechat_done
 #写到配置文件里
